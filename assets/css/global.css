@@ -1,0 +1,639 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 5rem; /*80px*/
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --hue: 237.6;
+    --first-color: hsl(var(--hue), 80%, 66%);
+    --first-color-alt: hsl(var(--hue), 80%, 55%);
+    --first-color-light: hsl(var(--hue), 80%, 88%);
+    --first-color-lighten: hsl(var(--hue), 80%, 92%);
+    --title-color: hsl(var(--hue), 5%, 9%);
+    --text-color: hsl(var(--hue), 0%, 0%);
+    --text-color-light: hsl(var(--hue), 0%, 51%);
+    --text-color-header: hsl(var(--hue), 0%, 18%);
+    --body-color: hsl(var(--hue), 0%, 95%);
+    --container-color: hsl(var(--hue), 0%, 91%);
+    --white-color: #FFF;
+
+    --bg: #1a1e2d;
+    --green: #a5ea9b;
+    --pink: #ff61d8;
+    --blue: #569cfa;
+    --orange: #ffcc81;
+    --cyan: #7ed1e2;
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Poppins', sans-serif;
+    --h1-font-size: 3rem;
+    --h2-font-size: 3rem;
+    --h3-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .9375rem;
+    --smaller-font-size: .875rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+  
+    /*========== Margenes Bottom ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+  
+    /*========== z index ==========*/
+    --z-fixed: 100;
+    --z-tooltip: 10;
+}
+
+
+  /* Responsive typography */
+@media screen and (max-width: 968px) {
+    :root {
+      --h1-font-size: 2rem;
+      --h2-font-size: 2rem; /*1.25rem*/
+      --h3-font-size: 1rem;
+      --normal-font-size: .938rem;
+      --small-font-size: .813rem;
+      --smaller-font-size: .75rem;
+    }
+}
+  
+/*=============== BASE ===============*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+html{
+    scroll-behavior: smooth;
+}
+  
+body,
+button,
+input,
+textarea{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+  
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+	
+}
+  
+button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+  
+h1,h2,h3{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+  
+ul{
+    list-style: none;
+}
+  
+a{
+    text-decoration: none;
+}
+  
+img{
+    max-width: 100%;
+    height: auto;
+}
+  
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container{
+    max-width: 968px;
+    margin-inline: auto;
+}
+
+/* Setting the margin to 1.25rem/20px for smaller devices  */
+@media screen and (max-width: 992px){
+    .container{
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+    }
+}
+@media screen and (max-width: 320px){
+    .container{
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+    }
+}
+
+.main{
+    overflow: hidden; /*For animation Scroll Reval*/
+}
+
+.grid{
+    display: grid;
+}
+
+.text-color{
+    color: var(--first-color);
+}
+
+.section{
+    padding: 5.5rem 0 2rem;
+}
+
+.section__title,
+.section__title-center{
+    font-size: var(--h2-font-size);
+    line-height: 109%;
+    margin-bottom: var(--mb-2-5);
+}
+
+.section__title-center{
+    text-align: center;
+}
+
+.section__description{
+    line-height: 2.8125rem;
+}
+
+.follow__icon{
+    font-size: 1.875rem;
+    color: var(--text-color-light);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.follow__icon:hover{
+    color: var(--first-color);
+    transform: translateY(-3px);
+}
+
+.follow__image {
+    filter: grayscale(100%);
+    /* Mengubah gambar menjadi abu-abu */
+    transition: filter 0.3s ease;
+    /* Efek transisi saat hover */
+    cursor: pointer;
+    transition: .2s;
+}
+
+.follow__image:hover {
+    filter: none;
+    /* Menghapus filter dan menampilkan warna asli gambar */
+    transform: translateY(-3px);
+}
+  
+/*=============== HEADER & NAV ===============*/
+.header{
+    width: 100%;
+    background-color: var(--body-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    transition: background .3s;
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Adjusting Nav height to 3.5rem/56px */
+@media screen and (max-width: 767px){
+    .nav{
+        height: calc(var(--header-height) - 1.5rem);
+    }
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close{
+    color: var(--title-color);
+}
+
+.nav__toggle,
+.nav__close{
+    font-size: 1.5625rem;
+    display: none;
+}
+
+.nav__logo{
+    font-size: 1.375rem;
+    font-weight: var(--font-bold);
+    transition: color .2s;
+}
+
+.nav__logo:hover{
+    color: var(--first-color);
+}
+
+.nav__list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav__link{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    transition: color .2s;
+}
+
+.nav__link:hover{
+    color: var(--first-color);
+}
+
+.nav__lamp {
+	position: relative;
+	left: 250px; /* Sesuaikan jarak horizontal sesuai kebutuhan */
+  }
+
+  
+@media screen and (max-width: 767px){
+    .nav__menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: var(--white-color);
+        box-shadow: -2px 0 4px hsla(var(--hue), 80%, 15%, .1);
+        border-radius: 1rem 0 0 1rem;
+        width: 80%;
+        height: 100%;
+        padding: 3rem 0 0 4rem;
+        z-index: var(--z-fixed);
+        transition: .4s;
+    }
+    .nav__close,
+    .nav__toggle{
+        display: block;
+    }
+    .nav__close{
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+        cursor: pointer;
+    }
+    .nav__list{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+	.nav__lamp {
+		position: relative;
+		left: 260px; /* Sesuaikan jarak horizontal sesuai kebutuhan */
+	  }
+}
+  
+/* Show menu */
+.show-menu{
+    right: 0;     
+}
+
+/* Change background header */
+.scroll-header{
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px hsla(var(--hue), 0%, 88%, .5);
+}
+  
+/* Active link */
+.active-link{
+    color: var(--first-color);
+}
+
+/*=============== BUTTONS ===============*/
+.button{
+    display: inline-block;
+    font-size:  var(--normal-font-size);
+    font-weight: var(--font-bold);
+    color: var(--white-color);
+    background-color: var(--first-color);
+    border: 2px solid var(--first-color);
+    border-radius: .625rem;
+    padding: 1rem 1.75rem;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.button:hover{
+    background-color: var(--first-color-alt);
+    border: 2px solid var(--first-color-alt);
+}
+
+.button--light{
+    color: var(--title-color);
+    background-color: transparent;
+    border: 2px solid var(--first-color);
+}
+
+.button--light:hover{
+    color: var(--white-color);
+    border: 2px solid var(--first-color-alt);
+}
+
+.button--flex{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .75rem;
+}
+
+.button--white{
+    color: var(--title-color);
+    background-color: var(--white-color);
+}
+
+/*=============== FOOTER ===============*/
+.footer{
+    background-color: var(--body-color);
+    padding: 2.5rem 0;
+}
+
+.footer__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .9375rem;
+}
+
+.footer__title{
+    font-size: 1.875rem;
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.footer__social{
+    display: inline-flex;
+    gap: .9375rem;
+}
+
+.footer__copy{
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+}
+
+@media screen and (max-width: 576px){
+    .footer__container{
+        flex-direction: column;
+    }
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+    position: fixed;
+    background-color: var(--first-color);
+    right: 1rem;
+    bottom: -30%;
+    display: inline-flex;
+    padding: .5rem;
+    border-radius: .25rem;
+    z-index: var(--z-tooltip);
+    opacity: .8;
+    transition: .4s;
+}
+
+.scrollup__icon{
+    font-size: 1rem;
+    color: var(--white-color);
+}
+
+.scrollup:hover{
+    background-color: var(--first-color-alt);
+    opacity: 1;
+}
+
+/* Show Scroll Up*/
+.show-scroll{
+    bottom: 3rem;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+    width: .6rem;
+    background-color: var(--first-color-light);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: var(--first-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--first-color-alt);
+}
+ /*=============== notif ===============*/
+.notification-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.notification-card.show {
+    opacity: 1;
+}
+
+.notification-card.success {
+    border: 2px solid #2ecc71;
+}
+
+.notification-card .message {
+    font-size: 18px;
+    text-align: center;
+}
+
+.notification-card .icon {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.notification-card .icon i {
+    font-size: 36px;
+    color: #2ecc71;
+}
+
+@keyframes successAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*=============== Contact Submit ===============*/
+.submit_button{
+    padding: 14px 26px;
+    border: none;
+    outline: none;
+    background: #6368EE;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 0.625rem;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.check-box{
+    width: 80px;
+    height: 80px;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    right: -40px;
+    opacity: 0;
+}
+
+.check-box svg{
+    width: 40px;
+    margin: 5px;
+}
+
+svg path{
+    stroke-width: 3;
+    stroke: #fff;
+    /* stroke-dasharray: 34; */
+    stroke-dashoffset: 34;
+    stroke-linecap: round;
+}
+
+.active{
+    background: #ff2b75;
+    transition: 1s;
+}
+
+.active .check-box{
+    right: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+.active p{
+    margin-right: 100px;
+    transition: 1s;
+}
+
+.active svg path{
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 1s;
+}
+
+.submit_button:hover{
+    background-color: var(--first-color-alt);
+    border: 2px solid var(--first-color-alt);
+}
+
+
+
+/*=============== bendera ===============*/
+
+/* Default */
+/* #flag{
+	margin: 50px;
+	width: 300px;
+	height: 200px;
+}
+  
+.flag__image{
+	position: relative;
+	background-image: url("indonesia.png");
+	background-size: 300px 100%;
+	width: 1px;
+	height: 100%;
+	display: inline-block;
+	animation: wave 1s ease-in-out infinite alternate;
+}
+@keyframes wave{
+	0% {
+		top: 5%;
+	}
+	100% {
+		top: -5%;
+	}
+} */
+
+
+
+/* .contain {
+    width: 50vw;
+    height: 70vh;
+  } */
+  /* .contain svg {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  } */
+  
+  #bongo-cat {
+    fill: var(--bg);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
+  }
+  #bongo-cat .laptop-cover,
+  #bongo-cat .headphone .band {
+    fill: none;
+  }
+  #bongo-cat .paw, #bongo-cat .head {
+    stroke: var(--orange);
+  }
+  #bongo-cat .laptop-keyboard {
+    stroke-width: 2;
+  }
+  #bongo-cat .terminal-code {
+    stroke-width: 5;
+  }
+  #bongo-cat .music .note,
+  #bongo-cat .laptop-base,
+  #bongo-cat .laptop-cover,
+  #bongo-cat .paw .pads {
+    stroke: var(--pink);
+  }
+  #bongo-cat .table line,
+  #bongo-cat .headphone .band,
+  #bongo-cat .headphone .speaker path:nth-child(3) {
+    stroke: var(--green);
+  }
+  #bongo-cat .terminal-frame,
+  #bongo-cat .laptop-keyboard,
+  #bongo-cat .headphone .speaker path:nth-child(2) {
+    stroke: var(--blue);
+  }
+  #bongo-cat .terminal-code,
+  #bongo-cat .headphone .speaker path:first-child {
+    stroke: var(--cyan);
+  }

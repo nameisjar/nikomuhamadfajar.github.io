@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--============= BOXICON =============-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--============= FAVICON =============-->
+    <link rel="shortcut icon" href="../assets/img/male.png" type="image/x-icon">
+
+    <!--=========== SWIPER CSS ===========-->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+
+    <!--=========== GLOBAL CSS ===========-->
+    <link rel="stylesheet" href="../assets/css/global.css" media="all">
+
+    <!--============ OUR PROJECT CSS ============-->
+    <link rel="stylesheet" href="../assets/css/our-project.css">
+
+    <title>Niko Muhamad Fajar</title>
+</head>
+
+<body>
+    <!--========= HEADER =========-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Niko Muhamad Fajar</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link"><i class='bx bx-home'></i> Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="./about.html" class="nav__link"><i class='bx bx-user'></i> About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="./our-project.html" class="nav__link active-link"><i class='bx bx-folder'></i>
+                            Project</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="./contact.html#contact" class="nav__link"><i class='bx bx-envelope'></i> Contact</a>
+                    </li>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--========== MAIN ==========-->
+    <main class="main">
+        <!--======== PROJECTS ========-->
+        <section class="projects section">
+            <h2 class="section__title container" id="myproject">My Projects</h2>
+
+            <ul class="projects__filter container">
+                <li class="project__filter-item active-projects" data-filter=".web-design">
+                    <h3 class="project__filter-title">Applications</h3>
+                </li>
+                <li class="project__filter-item" data-filter=".mobile-app-design">
+                    <h3 class="project__filter-title">Web Design</h3>
+                </li>
+                <li class="project__filter-item" data-filter=".freebies">
+                    <h3 class="project__filter-title">Mobile App Design</h3>
+                </li>
+            </ul>
+
+            <div class="projects__content container grid">
+                <!--========= Web Design =========-->
+                <article class="projects__card web-design">
+                    <img src="../assets/img/webagrorise.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">AgroRise - Educationn</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <a href="https://github.com/nameisjar/project-agrorise" class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>See On Github</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="projects__card web-design">
+                    <img src="../assets/img/parkir1.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">Data Parkir - Information Technology</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <a href="https://github.com/nameisjar/parkir-unej" class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>See On Github</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- <article class="projects__card web-design">
+                    <img src="../assets/img/project3.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">Lumy - Dashboard UI Kit</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>Live Preview</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="projects__card web-design">
+                    <img src="../assets/img/project4.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">Keeper - Soccer Site</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>Live Preview</span>
+                        </div>
+                    </div>
+                </article> -->
+
+                <!--===== Mobile App Design =====-->
+                <article class="projects__card mobile-app-design">
+                    <img src="../assets/img/olehaja.png " alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">OleholehAja - Web Design</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <a href="https://www.figma.com/file/c1rVAVhGjwdSwm2z7kzSzO/Untitled?type=design&mode=design&t=lIfbSLMCZAZwDkUV-1"
+                            class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>See</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="projects__card mobile-app-design">
+                    <img src="../assets/img/agroriseweb.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">AgroRise - Educationn</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <a href="https://www.figma.com/file/nz3WVzDBhKNl21z7s0jN93/PPL-AGRORISE?type=design&node-id=0%3A1&mode=design&t=twzf6DdTtAjH8G51-1"
+                            class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>See</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- <article class="projects__card mobile-app-design">
+                    <img src="../assets/img/project3.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">Lumy - Dashboard UI Kit</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>Live Preview</span>
+                        </div>
+                    </div>
+                </article> -->
+
+                <!--========= Freebies =========-->
+                <article class="projects__card freebies">
+                    <img src="../assets/img/focustrip.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">FocusTrip - Tourist</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <a href="https://www.figma.com/file/w5nFyqDYewxiY4Sex3zdyx/Untitled?type=design&node-id=0%3A1&mode=design&t=j4TxzGEsDOmogYXw-1 "
+                            class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>See</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="projects__card freebies">
+                    <img src="../assets/img/ewacle.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">E-Wacle - Transportation</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <a href="https://www.figma.com/file/P79V1bXRWQBfLyPuyl7hvD/Untitled?type=design&mode=design&t=48HaftuRf6TVeUgY-1"
+                            class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>See</span>
+                        </a>
+                    </div>
+                </article>
+                <article class="projects__card freebies">
+                    <img src="../assets/img/support.png" alt="" class="projects__card-img">
+
+                    <h3 class="project__card-title">SupportTalks - Health Services</h3>
+                    <div class="projects__card-group">
+                        <div class="projects__card-reviews">
+                            <i class='bx bx-layer projects__card-icon'></i>
+                            <span>My Educational Assignments</span>
+                        </div>
+                        <a href="https://www.figma.com/file/w5nFyqDYewxiY4Sex3zdyx/Untitled?type=design&node-id=0%3A1&mode=design&t=j4TxzGEsDOmogYXw-1 "
+                            class="projects__card-reviews">
+                            <i class='bx bx-show projects__card-icon'></i>
+                            <span>See</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--========= E-MAIL =========-->
+        <section class="email section">
+            <div class="email__container container grid">
+                <h2 class="email__title">
+                    Interested
+                    working<br>
+                    with me?
+                </h2>
+
+                <a href="mailto:nikomuhamadfajar04@gmail.com" class="button button--white button--flex">
+                    <i class='bx bx-envelope email__icon'></i> Email Me
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!--========= FOOTER =========-->
+    <footer class="footer">
+        <div class="footer__container container">
+            <h2 class="footer__title">Let's Connect !</h2>
+
+            <div class="footer__social">
+                <a href="https://www.instagram.com/nkofjar/">
+                    <img src="../assets/img/instagram.png" alt="Instagram" class="follow__image">
+                </a>
+                <a href="https://www.linkedin.com/in/nikomuhamadfajar">
+                    <img src="../assets/img/linkedin.png" alt="LinkedIn" class="follow__image">
+                </a>
+                <a href="https://github.com/nameisjar">
+                    <img src="../assets/img/github1.png" alt="GitHub" class="follow__image">
+                </a>
+            </div>
+
+            <p class="footer__copy">&copy;2023 Nik, All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!--========= SCROLL UP =========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+    </a>
+
+    <!--====== MIXITUP FILTER  ======-->
+    <script src="../assets/js/mixitup.min.js"></script>
+
+    <!--====== SWIPER CSS ======-->
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <!--==== SCROLL REVEAL ====-->
+    <script src="../assets/js/scrollreveal.min.js"></script>
+
+    <!--========== JS =========-->
+    <script src="../assets/js/main.js"></script>
+
+    <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+    <script src='https://assets.codepen.io/16327/MorphSVGPlugin3.min.js'></script>
+    <script src='https://unpkg.com/gsap@3/dist/Draggable.min.js'></script>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

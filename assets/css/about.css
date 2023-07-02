@@ -13,8 +13,8 @@
     border-radius: 1.875rem;
 }
 
-.about__title{
-    font-size: var(--h1-font-size);
+.about__title {
+    font-size: 32px;
 }
 
 .about__office{
@@ -214,6 +214,9 @@ textarea{
     iframe{
         height: 380px;
     }
+    .about__title {
+        font-size: 1.375rem;
+    }
 }
 
 /* For small devices */
@@ -227,5 +230,8 @@ textarea{
     }
     iframe{
         order: 1;
+    }
+    .about__title {
+        font-size: 1.375rem;
     }
 }

@@ -391,6 +391,12 @@ img{
     .footer__container{
         flex-direction: column;
     }
+    .nav__logo {
+        font-size: 1.175rem;
+        font-weight: var(--font-bold);
+        transition: color .2s;
+    }
+
 }
 
 /*=============== SCROLL UP ===============*/
@@ -601,6 +607,9 @@ svg path{
 	color: #e9e5d5;
     /* background: #080d17; */
     border-color: #e9e5d5;
+}
+.night #intro-text1 {
+	color: #6368EE;
 }
 .time-circle {
   position: relative;

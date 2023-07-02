@@ -57,9 +57,12 @@
 }
 
 .home__img{
-    width: 450px;
-    margin-top: 200px;
+    width: 750px;
+    padding: 10px;
     
+}
+.dark{
+    display: none;
 }
 
 /*============ HELP ===========*/
@@ -333,12 +336,18 @@
 }
 
 @media screen and (max-width: 992px){
-    .home__img{
-        width: 400px;
-        justify-self: center;
-        margin-top: 0px;
+    .month{
+        /* order: -1; */
+        display: none;
     }
-
+    .time-circle{
+        /* height: 330px;
+        width: 330px; */
+        display: none;
+    }
+    .dark{
+        display: block;
+    }
     .help__numbers{
         flex-direction: column;
         align-items: center;
@@ -409,10 +418,17 @@
     .button__icon{
         display: block;
     }
-    .home__img{
-        width: 320px;
-        order: -1;
-        margin-top: 0px;
+    .month{
+        /* order: -1; */
+        display: none;
+    }
+    .dark{
+        display: block;
+    }
+    .time-circle{
+        /* height: 330px;
+        width: 330px; */
+        display: none;
     }
 
     .help__img{
@@ -467,9 +483,17 @@
 
 /* For small devices */
 @media screen and (max-width: 375px){
-    .home__img{
-        width: 280px;
-        margin-top: 0px;
+    .month{
+        /* order: -1; */
+        display: none;
+    }
+    .time-circle{
+        /* height: 330px;
+        width: 330px; */
+        display: none;
+    }
+    .dark{
+        display: block;
     }
     .home__buttons{
         gap: 10px;
@@ -524,9 +548,9 @@
 }
 
 @media screen and (max-width: 320px){
-    .home__img{
-        width: 220px;
-        margin-top: 0px;
+    .time-circle{
+        height: 200px;
+        width: 200px;
     }
     .home__title{
         font-size: 1.5625rem;

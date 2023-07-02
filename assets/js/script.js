@@ -80,92 +80,76 @@ function resetForm(...inputs) {
 //   flag.appendChild(flag_image);
 // }
 
-"use strict";
 
-const ID = "bongo-cat";
-const s = (selector) => `#${ID} ${selector}`;
-const notes = document.querySelectorAll(".note");
-for (let note of notes) {
-  const parentElement = note?.parentElement;
-  if (parentElement) {
-    parentElement.appendChild(note.cloneNode(true));
-    parentElement.appendChild(note.cloneNode(true));
+
+$("#switch").click(function () {
+  if ($("#switch").hasClass("switched")) {
+    $("#switch").removeClass("switched");
+    $("#circle").css("margin-left", "5%");
+    $("#fullpage").removeClass("night");
+  } else {
+    $("#switch").addClass("switched");
+    $("#circle").css("margin-left", "55%");
+    $("#fullpage").addClass("night");
   }
-}
-
-const music = { note: s(".music .note") };
-const cat = {
-  pawRight: {
-    up: s(".paw-right .up"),
-    down: s(".paw-right .down"),
-  },
-  pawLeft: {
-    up: s(".paw-left .up"),
-    down: s(".paw-left .down"),
-  },
-};
-
-const colorizer = () => anime.random(["#00ff00", "#ff00ff", "#0000ff", "#ff6600", "#00ffff", "#a3a4ec", "#67b5c0", "#fd7c6e"]);
-const rotator = () => anime.random(-50, 50);
-const dir = (amt) => `${anime.random(["-", "+"])}=${amt}`;
-
-const animatePawState = (selector) => {
-  anime({
-    targets: selector,
-    opacity: [0, 1],
-    duration: 10,
-    delay: 190,
-    direction: 'alternate',
-    loop: true,
-  });
-};
-
-anime({
-  targets: ".terminal-code line",
-  strokeDashoffset: [anime.setDashoffset, 0],
-  easing: "linear",
-  duration: 100,
-  delay: anime.stagger(100, { from: "random" }),
-  direction: "alternate",
-  loop: true,
 });
 
-const animateNotes = (els) => {
-  els.forEach((el) => {
-    anime.set(el, {
-      stroke: colorizer(),
-      rotate: rotator(),
-      translateX: anime.random(-25, 25),
+$("#month-switch").click(function () {
+  if ($("#month-switch").hasClass("switched")) {
+    $("#month-switch").removeClass("switched");
+    $("#circle").css("margin-left", "5%");
+    $("#fullpage").removeClass("night");
+  } else {
+    $("#month-switch").addClass("switched");
+    $("#circle").css("margin-left", "55%");
+    $("#fullpage").addClass("night");
+  }
+});
+
+
+// Dapatkan semua elemen tautan navigasi
+const navLinks = document.querySelectorAll('.nav__link');
+
+// Dapatkan tautan Home
+const homeLink = document.querySelector('a[href="index.html"]');
+
+// Loop melalui setiap elemen tautan navigasi
+navLinks.forEach(link => {
+  // Tambahkan event listener untuk setiap tautan
+  link.addEventListener('click', () => {
+    // Hapus kelas "active-link" dari semua elemen tautan
+    navLinks.forEach(navLink => {
+      navLink.classList.remove('active-link');
     });
+
+    // Cek apakah tautan yang diklik adalah tautan Contact
+    if (link.getAttribute('href') === '#contact') {
+      // Hapus atribut "id" dengan nilai "intro-text" dari tautan Contact jika ada
+      if (link.hasAttribute('id')) {
+        link.removeAttribute('id');
+      }
+
+      // Cek apakah tautan Home memiliki atribut "id" dengan nilai "intro-text"
+      if (homeLink.hasAttribute('id') && homeLink.getAttribute('id') === 'intro-text') {
+        // Hapus atribut "id" dengan nilai "intro-text" dari tautan Home
+        homeLink.removeAttribute('id');
+      } else {
+        // Tambahkan atribut "id" dengan nilai "intro-text" ke tautan Home
+        homeLink.setAttribute('id', 'intro-text');
+      }
+    } else {
+      // Hapus atribut "id" dengan nilai "intro-text" dari tautan Home jika ada
+      if (homeLink.hasAttribute('id')) {
+        homeLink.removeAttribute('id');
+      }
+    }
+
+    // Tambahkan kelas "active-link" ke tautan yang diklik
+    link.classList.add('active-link');
   });
-  anime({
-    targets: els,
-    opacity: [1, 0],
-    scale: [0, 1],
-    duration: 2000,
-    easing: "linear",
-    delay: anime.stagger(500, { from: "random" }),
-    rotate: dir(anime.random(20, 30)),
-    translateX: dir(anime.random(40, 60)),
-    translateY: anime.random(-200, -220),
-    complete: () => animateNotes(els),
-  });
-};
+});
 
-animatePawState(cat.pawLeft.up);
-animatePawState(cat.pawRight.down);
-animatePawState(cat.pawLeft.down);
-animatePawState(cat.pawRight.up);
 
-const noteElFn = anime.random;
-const noteEls = noteElFn(music.note);
-const numNotes = noteEls.length / 3;
-const notesG1 = noteEls.splice(0, numNotes);
-const notesG2 = noteEls.splice(0, numNotes);
-const notesG3 = noteEls;
 
-animateNotes(notesG1);
-setTimeout(() => animateNotes(notesG2), 50);
-setTimeout(() => animateNotes(notesG3), 250);
 
 

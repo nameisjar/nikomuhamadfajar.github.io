@@ -107,47 +107,6 @@ $("#month-switch").click(function () {
 });
 
 
-// Dapatkan semua elemen tautan navigasi
-const navLinks = document.querySelectorAll('.nav__link');
-
-// Dapatkan tautan Home
-const homeLink = document.querySelector('a[href="index.html"]');
-
-// Loop melalui setiap elemen tautan navigasi
-navLinks.forEach(link => {
-  // Tambahkan event listener untuk setiap tautan
-  link.addEventListener('click', () => {
-    // Hapus kelas "active-link" dari semua elemen tautan
-    navLinks.forEach(navLink => {
-      navLink.classList.remove('active-link');
-    });
-
-    // Cek apakah tautan yang diklik adalah tautan Contact
-    if (link.getAttribute('href') === '#contact') {
-      // Hapus atribut "id" dengan nilai "intro-text" dari tautan Contact jika ada
-      if (link.hasAttribute('id')) {
-        link.removeAttribute('id');
-      }
-
-      // Cek apakah tautan Home memiliki atribut "id" dengan nilai "intro-text"
-      if (homeLink.hasAttribute('id') && homeLink.getAttribute('id') === 'intro-text') {
-        // Hapus atribut "id" dengan nilai "intro-text" dari tautan Home
-        homeLink.removeAttribute('id');
-      } else {
-        // Tambahkan atribut "id" dengan nilai "intro-text" ke tautan Home
-        homeLink.setAttribute('id', 'intro-text');
-      }
-    } else {
-      // Hapus atribut "id" dengan nilai "intro-text" dari tautan Home jika ada
-      if (homeLink.hasAttribute('id')) {
-        homeLink.removeAttribute('id');
-      }
-    }
-
-    // Tambahkan kelas "active-link" ke tautan yang diklik
-    link.classList.add('active-link');
-  });
-});
 
 
 
